@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window type="window">
+    <controls>
+        <control type="image" id="30002">
+            <description>The spinning animation in the background</description>
+            <posx>607</posx>
+            <posy>327</posy>
+            <width>66</width>
+            <height>66</height>
+            <texture>loader.gif</texture>
+        </control>
+        <control type="largeimage" id="30001">
+            <description>The big picture</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width></width><!-- this will be set from the python code -->
+            <height>auto</height>
+            <fadetime>1000</fadetime>
+            <aspectratio>scale</aspectratio>
+        </control>
+        <control type="label" id="30003">
+            <description>Label for source title</description>
+            <right>20</right>
+            <bottom>15</bottom>
+            <width>400</width>
+            <height>20</height>
+            <align>right</align>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font13</font>
+        </control>
+        <control type="label" id="30004">
+            <description>Label for picture title</description>
+            <left>20</left>
+            <bottom>15</bottom>
+            <width>820</width>
+            <height>20</height>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>FFFFFFFF</textcolor>
+            <font>font13</font>
+            <scroll>true</scroll>
+        </control>
+        <control type="largeimage" id="30006">
+            <description>The xext big picture (for preloading)</description>
+            <posx>1280</posx>
+            <posy>0</posy>
+            <width>16</width>
+            <height>9</height>
+            <aspectratio>keep</aspectratio>
+        </control>
+    </controls>
+</window>

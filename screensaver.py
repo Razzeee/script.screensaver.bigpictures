@@ -49,13 +49,16 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         self.loader_control = self.getControl(30002)
         self.source_control = self.getControl(30003)
         self.title_control = self.getControl(30004)
-        self.description_control = self.getControl(30005)
         self.next_picture_control = self.getControl(30006)
 
         self.picture_duration = (
             int(addon.getSetting('picture_duration')) * 1000
         )
 
+        if int(addon.getSetting('choose_view')) == 0:
+            self.description_control = self.getControl(30005)
+        elif int(addon.getSetting('choose_view')) == 1:
+            self.picture_control.setWidth(self.getWidth())
         self.get_scrapers()
         self.slideshow()
 
@@ -100,7 +103,9 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         self.picture_control.setImage(picture_url)
         self.source_control.setLabel(photo['source'])
         self.title_control.setLabel(photo['title'])
-        self.description_control.setText(photo['description'])
+        if int(addon.getSetting('choose_view')) == 0:
+            self.description_control.setText(photo['description'])
+
 
     def preload_next_photo(self, photo):
         picture_url = photo['pic']
@@ -117,11 +122,19 @@ class Screensaver(xbmcgui.WindowXMLDialog):
 
 
 if __name__ == '__main__':
-    screensaver = Screensaver(
-        'script-%s-main.xml' % addon_name,
-        addon_path,
-        'default',
-    )
+    if int(addon.getSetting('choose_view')) == 0:
+        screensaver = Screensaver(
+            'script-%s-main.xml' % addon_name,
+            addon_path,
+            'default',
+        )
+    elif int(addon.getSetting('choose_view')) == 1:
+        screensaver = Screensaver(
+            'script-%s-simple.xml' % addon_name,
+            addon_path,
+            'default',
+        )
+
     screensaver.doModal()
     del screensaver
     sys.modules.clear()
