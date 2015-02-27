@@ -52,3 +52,19 @@ msgstr ""
 msgctxt "#32406"
 msgid "Lens Blog - The New York Times"
 msgstr ""
+
+msgctxt "#32407"
+msgid "View"
+msgstr ""
+
+msgctxt "#32408"
+msgid "Normal"
+msgstr ""
+
+msgctxt "#32409"
+msgid "Simple"
+msgstr ""
+
+msgctxt "#32410"
+msgid "Reddit"
+msgstr ""
