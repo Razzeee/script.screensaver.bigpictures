@@ -59,6 +59,7 @@ class Screensaver(xbmcgui.WindowXMLDialog):
             self.description_control = self.getControl(30005)
         elif int(addon.getSetting('choose_view')) == 1:
             self.picture_control.setWidth(self.getWidth())
+            self.picture_control.setHeight(self.getHeight())
         self.get_scrapers()
         self.slideshow()
 
